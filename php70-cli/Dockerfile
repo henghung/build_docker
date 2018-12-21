@@ -10,4 +10,6 @@ RUN apk add py-pip && \
 RUN pip install awscli && \
     pip install dump-env
 
+RUN apk add --no-cache libpng libpng-dev && docker-php-ext-install gd && apk del libpng-dev
+
 CMD ["/bin/sh"]
