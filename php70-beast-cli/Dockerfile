@@ -16,4 +16,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
 
 RUN apk del libpng-dev libffi-dev musl-dev openssl-dev python3-dev
 
+COPY conf/beast.so /usr/lib/
+
+COPY conf/beast.ini /usr/local/etc/php/conf.d/
+
 CMD ["/bin/sh"]
